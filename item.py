@@ -3,7 +3,7 @@ class item:
     def __init__(self, name):
         self.name = name
 
-    #define price
+    #define prices
         self.al_price = 2
         self.to_price = 1
         self.sa_price = 1
@@ -21,39 +21,39 @@ class item:
         self.ta_price = 800
         self.la_price = 1000
 
-    def get_price(self, name):
-        if name == "aluminum foil":
+    def get_price(self):
+        if self.name == "aluminum foil":
             return self.ab_price
-        elif name == "toothpaste":
+        elif self.name == "toothpaste":
             return self.to_price
-        elif name == "salt":
+        elif self.name == "salt":
             return self.sa_price
-        elif name == "pepper":
+        elif self.name == "pepper":
             return self.pe_price
-        elif name == "Harry Potter Book":
+        elif self.name == "Harry Potter Book":
             return self.hb_price
-        elif name == "SW Design Book":
+        elif self.name == "SW Design Book":
             return self.sb_price
-        elif name == "Spiderman Book":
+        elif self.name == "Spiderman Book":
             return self.spb_price
-        elif name == "Diary of a Wimpy Kid Book":
+        elif self.name == "Diary of a Wimpy Kid Book":
             return self.db_price
-        elif name == "Spiderman Figure":
+        elif self.name == "Spiderman Figure":
             return self.sf_price
-        elif name == "Superman Figure":
+        elif self.name == "Superman Figure":
             return self.suf_price
-        elif name == "Pikachu Plushy":
+        elif self.name == "Pikachu Plushy":
             return self.pp_price
-        elif name == "Charizard Card":
+        elif self.name == "Charizard Card":
             return self.cc_price
-        elif name == "Phone":
+        elif self.name == "Phone":
             return self.ph_price
-        elif name == "Camera":
+        elif self.name == "Camera":
             return self.ca_price
-        elif name == "Tablet":
+        elif self.name == "Tablet":
             return self.ta_price
-        elif name == "Laptop":
+        elif self.name == "Laptop":
             return self.la_price
 
-        def getName():
+        def get_name():
             return self.name

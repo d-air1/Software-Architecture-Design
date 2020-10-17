@@ -2,6 +2,7 @@ from cart import cart
 from order import order
 from user import user 
 from database import *
+from item import item
 
 #Read in username and password from user
 username = input("Enter your username: ")
@@ -20,6 +21,9 @@ while (loop_flag):
     #ask user to select a category
     print("Categories")
     print("1. for Household items")
+
+    print("Cost is " + )
+
     print("2. for Books")
     print("3. for Toys")
     print("4. for Small Electronics")
@@ -37,13 +41,28 @@ while (loop_flag):
 
         #append to cart
         if (selection == "1"):
-            scart.addItem("aluminum foil")
+            #temporary item used to get price of an item
+            stuff = item("aluminum foil")
+            if (scart.addItem(stuff) == False):
+                print("Sorry we are all out of that item at the moment")
+
         elif (selection == "2"):
-            scart.addItem("toothpaste")
+            #temporary item used to get price of an item
+            stuff = item("toothpaste")
+            if (scart.addItem(stuff) == False):
+                print("Sorry we are all out of that item at the moment")
+
         elif (selection == "3"):
-            scart.addItem("salt")
+            #temporary item used to get price of an item
+            stuff = item("salt")
+            if (scart.addItem(stuff) == False):
+                print("Sorry we are all out of that item at the moment")
+
         elif (selection == "4"):
-            scart.addItem("pepper")
+            #temporary item used to get price of an item
+            stuff = item("pepper")
+            if (scart.addItem(stuff) == False):
+                print("Sorry we are all out of that item at the moment")
 
 
     if (answer == "2"):
@@ -57,13 +76,28 @@ while (loop_flag):
 
         #append to cart
         if (selection == "1"):
-            scart.addItem("Haryy Potter Book")
+            #temporary item used to get price of an item
+            stuff = item("Haryy Potter Book")
+            if (scart.addItem(stuff) == False):
+                print("Sorry we are all out of that item at the moment")
+
         elif (selection == "2"):
-            scart.addItem("SW Design Book")
+            #temporary item used to get price of an item
+            stuff = item("SW Design Book")
+            if (scart.addItem(stuff) == False):
+                print("Sorry we are all out of that item at the moment")
+
         elif (selection == "3"):
-            scart.addItem("Spiderman Book")
-        elif (selection == "Diary of a Wimpy Kid Book"):
-            scart.addItem("pepper")
+            #temporary item used to get price of an item
+            stuff = item("Spiderman Book")
+            if (scart.addItem(stuff) == False):
+                print("Sorry we are all out of that item at the moment")
+
+        elif (selection == "4"):
+            #temporary item used to get price of an item
+            stuff = item("Diary of a Wimpy Kid Book")
+            if (scart.addItem(stuff) == False):
+                print("Sorry we are all out of that item at the moment")
 
     if (answer == "3"):
         #ask what item they want
@@ -76,13 +110,28 @@ while (loop_flag):
 
         #append to cart
         if (selection == "1"):
-            scart.addItem("Spiderman Figure")
+            #temporary item used to get price of an item
+            stuff = item("Spiderman Figure")
+            if (scart.addItem(stuff) == False):
+                print("Sorry we are all out of that item at the moment")
+
         elif (selection == "2"):
-            scart.addItem("Superman Figure")
+            #temporary item used to get price of an item
+            stuff = item("Superman Figure")
+            if (scart.addItem(stuff) == False):
+                print("Sorry we are all out of that item at the moment")
+
         elif (selection == "3"):
-            scart.addItem("Pikachu Plushy")
+            #temporary item used to get price of an item
+            stuff = item("Pikachu Plushy")
+            if (scart.addItem(stuff) == False):
+                print("Sorry we are all out of that item at the moment")
+
         elif (selection == "4"):
-            scart.addItem("Charizard Card")
+            #temporary item used to get price of an item
+            stuff = item("Charizard Card")
+            if (scart.addItem(stuff) == False):
+                print("Sorry we are all out of that item at the moment")
 
     if (answer == "4"):
         #ask what item they want
@@ -95,10 +144,25 @@ while (loop_flag):
 
         #append to cart
         if (selection == "1"):
-            scart.addItem("Phone")
+            #temporary item used to get price of an item
+            stuff = item("Phone")
+            if (scart.addItem(stuff) == False):
+                print("Sorry we are all out of that item at the moment")
+
         elif (selection == "2"):
-            scart.addItem("Camera")
+            #temporary item used to get price of an item
+            stuff = item("Camera")
+            if (scart.addItem(stuff) == False):
+                print("Sorry we are all out of that item at the moment")
+
         elif (selection == "3"):
-            scart.addItem("Tablet")
+            #temporary item used to get price of an item
+            stuff = item("Tablet")
+            if (scart.addItem(stuff) == False):
+                print("Sorry we are all out of that item at the moment")
+
         elif (selection == "4"):
-            scart.addItem("Laptop")
+            #temporary item used to get price of an item
+            stuff = item("Laptop")
+            if (scart.addItem(stuff) == False):
+                print("Sorry we are all out of that item at the moment")
