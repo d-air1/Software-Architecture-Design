@@ -54,3 +54,6 @@ class item:
             return self.ta_price
         elif name == "Laptop":
             return self.la_price
+
+        def getName():
+            return self.name

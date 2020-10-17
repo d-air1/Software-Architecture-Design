@@ -11,7 +11,7 @@ class cart:
     
     def getTotal(self):
         for i in self.items:
-            self.total += i.
+            self.total += i.getPrice(i.getName())
         return self.total
 
     #this should append the added item to the list
