@@ -1,0 +1,16 @@
+aluminum foil: 10: 2
+toothpaste: 10: 1
+salt: 10: 1
+pepper: 10: 1
+Harry Potter Book: 10: 20
+SW Design Book: 10: 15
+Spiderman Book: 10: 15
+Diary of a Wimpy Kid Book: 10: 20
+Spiderman Figure: 10: 8
+Superman Figure: 10: 12
+Pikachu Plushy: 10: 15
+Charizard Card: 10: 4
+Phone: 10: 400
+Camera: 10: 600
+Tablet: 10: 800
+Laptop: 10: 1000
