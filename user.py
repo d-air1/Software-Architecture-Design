@@ -18,6 +18,9 @@ class user:
                 self.creditcard = int(payment)
                 return True
             else:
+                print("Incorrect card format.")
+                print("Please reinter your information")
+                print()
                 return False
         except ValueError as ex:
             print("Invalid Characters in Credit Card")

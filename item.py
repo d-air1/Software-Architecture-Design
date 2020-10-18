@@ -23,7 +23,7 @@ class item:
 
     def get_price(self, name):
         if self.name == "aluminum foil":
-            return self.ab_price
+            return self.al_price
         elif self.name == "toothpaste":
             return self.to_price
         elif self.name == "salt":

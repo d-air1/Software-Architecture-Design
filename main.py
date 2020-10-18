@@ -4,6 +4,21 @@ from user import user
 from database import *
 from item import item
 
+#Notes about program
+#Forgot about showing stock quantity to user code became to big and complex to implement later
+#this means that stock is not shown between purchases
+#we were confused on wheter or not payment address information was stored between executions
+#of the program or just different purchases made during the same execution of the proram
+#we went with the latter
+
+#Further Documentation
+#The user currently has to type the item they want to remove
+#adding and removing is done one at a time
+#because stock was not exposed to the user, neither was quantity
+#so removing an item only removes the first one.
+#a warning is printed before doing so
+
+
 #Read in username and password from user
 username = input("Enter your username: ")
 password = input("Enter your password: ")

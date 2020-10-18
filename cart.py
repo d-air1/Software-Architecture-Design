@@ -41,6 +41,7 @@ class cart:
                     #remove item
                     self.items.remove(i)
                     break
+        #if item not in cart or they mispelled item trigger warning
         else:
             print()
             print()
