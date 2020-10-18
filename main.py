@@ -186,10 +186,19 @@ while (loop_flag):
     elif (answer == "7"):
         #create order
         while (True):
-            customer.setAddress(str(input("Enter your address: ")))
-            if (customer.setPayment(str(input("Enter your credit card number")))):
+            #have them enter in their address if they have
+            if ((customer.getAddress() == "") or (customer.getPayment() == "")):
+                customer.setAddress(str(input("Enter your address: ")))
+            
+                #have them enter in their payment if they haven't already
+                if (customer.setPayment(str(input("Enter your credit card number")))):
+                        purchase = order(customer)
+                        break
+            
+            else:
                 purchase = order(customer)
                 break
+                
         
 
     elif (answer == "8"):

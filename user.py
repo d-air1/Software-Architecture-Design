@@ -26,3 +26,9 @@ class user:
     def getInfo(self):
         info = [self.username, self. address, self.creditcard]
         return info
+
+    def getAddress(self):
+        return self.address
+
+    def getPayment(self):
+        return self.creditcard
