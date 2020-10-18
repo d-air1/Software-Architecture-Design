@@ -1,4 +1,5 @@
 from inventory import inventory
+from item import item
 
 class cart:
     #the main thing here is that I wanted the shopping cart to keep track of the items in the cart by appending to a list of item objects so first we need to import the item class I drafted up
@@ -29,7 +30,34 @@ class cart:
         self.inv.rm_stock(item.get_name())
 
     #this should remove the iem from the lsit
-    def rmitem(self, item):
+    def rmitem(self, name):
         #rm item from items array
+        if not self.items:
+            for i in self.items:
+                if name.lower() == i.lower():
+                    #save name of item
+                    tmp = i
+                    #remove item
+                    self.items.remove(i)
+                    break
+        else:
+            print("Nothing to remove.")
+        
         #update total
-        #update item number
+        self.total -= item.get_price(tmp)
+    
+    def showCart(self):
+        print("---Items currently in your cart---")
+        if not self.items:
+            print("Cart is empty")
+        
+        else:
+            for i in self.items:
+                print(i + " $" + i.get_price(i.get_name()))
+                print("Total is " + self.total)
+
+    def emptyCart():
+        if not self.items:
+            return True
+        else:
+            return False

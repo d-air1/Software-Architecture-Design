@@ -14,6 +14,9 @@ scart = cart()
 #forward the username and password to login function which should check the database
 login(username, password)
 
+#create user
+customer = user(username, pasword)
+
 loop_flag = True
 
 #start infinite loop 
@@ -21,13 +24,15 @@ while (loop_flag):
     #ask user to select a category
     print("Categories")
     print("1. for Household items")
-
-    print("Cost is " + )
-
     print("2. for Books")
     print("3. for Toys")
     print("4. for Small Electronics")
-    answer = str(input("Pick a Category 1-4: "))
+    print("5. to Show Cart")
+    print("6. Remove from Cart")
+    print("7. Finalize order")
+    print("8. Show Order History")
+    print("9. Logout")
+    answer = str(input("Pick a Category 1-4 to add to cart or 5-7 for cart operations: "))
 
     #verify category
     if (answer == "1"):
@@ -65,7 +70,7 @@ while (loop_flag):
                 print("Sorry we are all out of that item at the moment")
 
 
-    if (answer == "2"):
+    elif (answer == "2"):
         #ask what item they want
         print("---Items for Sale---")
         print("1. Harry Potter Book")
@@ -99,7 +104,7 @@ while (loop_flag):
             if (scart.addItem(stuff) == False):
                 print("Sorry we are all out of that item at the moment")
 
-    if (answer == "3"):
+    elif (answer == "3"):
         #ask what item they want
         print("---Items for Sale---")
         print("1. Spiderman Figure")
@@ -133,7 +138,7 @@ while (loop_flag):
             if (scart.addItem(stuff) == False):
                 print("Sorry we are all out of that item at the moment")
 
-    if (answer == "4"):
+    elif (answer == "4"):
         #ask what item they want
         print("---Items for Sale---")
         print("1. Phone")
@@ -166,3 +171,33 @@ while (loop_flag):
             stuff = item("Laptop")
             if (scart.addItem(stuff) == False):
                 print("Sorry we are all out of that item at the moment")
+
+    #print contents of the cart along with total
+    elif (answer == "5"):
+        scart.showCart()
+
+    elif (answer == "6"):
+        scart.showCart()
+        print("Note: if the item appears twice. Only the first one will be removed.")
+        removal = str(input("Type the whole name of the item to be removed: "))
+        scart.rmItem(removal)
+        scart.showCart()
+
+    elif (answer == "7"):
+        #create order
+        while (True):
+            customer.setAddress(str(input("Enter your address: ")))
+            if (customer.setPayment(str(input("Enter your credit card number")))):
+                purchase = order(customer)
+                break
+        
+
+    elif (answer == "8"):
+        #do stuff
+        tmpOrder = order(None)
+        tmpOrder.showHistory()
+
+    elif (answer == "9"):
+        #logout
+        print("Thanks for shopping with us")
+        quit()

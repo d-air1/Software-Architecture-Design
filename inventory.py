@@ -1,5 +1,8 @@
 class inventory:
     def __init__(self):
+        #define inventory array
+        self.stuff = ["aluminum foil", "toothpaste", "salt", "pepper", "Harry Potter Book", "SW Design Book", "Spiderman Book", "Diary of a Wimpy Kid Book", "Spiderman Figure", "Superman Figure", "Pikachu Plushy", "Charizard Card", "Phone", "Camera", "Tablet", "Laptop"]
+
         #define stock number
         self.al_stock = 10
         self.to_stock = 10
@@ -120,3 +123,5 @@ class inventory:
         elif item == "Laptop":
             self.la_stock += 1
 
+    def getInv(self):
+        return self.stuff
