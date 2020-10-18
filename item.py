@@ -1,9 +1,9 @@
 class item:
-    #I was trying to dynamically set the attributes for the item class based off of the name passed to it
+    #Dynamically set the attributes for the item class based off of the name passed to it
     def __init__(self, name):
         self.name = name
 
-    #define prices
+    #Define prices of items in the store
         self.al_price = 2
         self.to_price = 1
         self.sa_price = 1
@@ -21,6 +21,7 @@ class item:
         self.ta_price = 800
         self.la_price = 1000
 
+    #Returns the price of each item listed
     def get_price(self, name):
         if self.name == "aluminum foil":
             return self.al_price
@@ -55,5 +56,6 @@ class item:
         elif self.name == "Laptop":
             return self.la_price
 
+    #Returns name of item
     def get_name(self):
         return self.name
