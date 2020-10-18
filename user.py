@@ -14,7 +14,7 @@ class user:
     #I still need to add some error checking as per the assignment instructions
     def setPayment(self, payment):
         try:
-            if len(payment) == "10":
+            if len(payment) == 10:
                 self.creditcard = int(payment)
                 return True
             else:

@@ -8,6 +8,9 @@ from item import item
 username = input("Enter your username: ")
 password = input("Enter your password: ")
 
+#order number
+oNum = 0
+
 #create shopping cart
 scart = cart()
 
@@ -185,25 +188,47 @@ while (loop_flag):
 
     elif (answer == "7"):
         #create order
+        oNum =+ 1
         while (True):
             #have them enter in their address if they have
             if ((customer.getAddress() == "") or (customer.getPayment() == "")):
                 customer.setAddress(str(input("Enter your address: ")))
-            
+             
                 #have them enter in their payment if they haven't already
-                if ( not customer.setPayment(str(input("Enter your credit card number: ")))):
-                        purchase = order(customer)
+                if (customer.setPayment(str(input("Enter your credit card number: ")))):
+                        print("---Confirm Purchase---")
+                        confirmPurchase = str(input("Type yes to confirm otherwise type no: "))
+
+                        #make the customer confirm their purchase
+                        if confirmPurchase == "yes":
+                            purchase = order(customer, oNum)
+                            purchase.orderHistory()
+                        else:
+                            oNum -= 1
                         break
             
             else:
-                purchase = order(customer)
+                #make the customer confirm their purchase
+                print("---Confirm Purchase---")
+                confirmPurchase = str(input("Type yes to confirm otherwise type no: "))
+
+                if confirmPurchase == "yes":
+                    purchase = order(customer, oNum)
+
+                else:
+                    oNum -= 1
+                    purchase = order(customer, oNum)
+                    purchase.orderHistory()
                 break
+        
+        
+
                 
         
 
     elif (answer == "8"):
         #do stuff
-        tmpOrder = order(None)
+        tmpOrder = order(None, oNum)
         tmpOrder.showHistory()
 
     elif (answer == "9"):
