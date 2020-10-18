@@ -13,6 +13,7 @@ class user:
     #This function is called when the user is prompted for a credit card
     def setPayment(self, payment):
         try:
+            #Ensures that user enter credit number of the length of special OSC purchasing card
             if len(payment) == 10:
                 self.creditcard = int(payment)
                 return True
