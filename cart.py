@@ -32,18 +32,19 @@ class cart:
     #this should remove the iem from the lsit
     def rmItem(self, name):
         #rm item from items array
-        tmp = ""
-        if not self.items:
+        if len(self.items):
             for i in self.items:
                 if (name.lower() == i.get_name().lower()):
-                    #save name of item
-                    tmp = i
+                    
+                    #update total
+                    self.total -= i.get_price(i.get_name())
+
                     #remove item
                     self.items.remove(i)
-                    #update total
-                    self.total -= item.get_price(tmp)
                     break
         else:
+            print()
+            print()
             print("Item not in cart or check spelling.")
     
     def showCart(self):
