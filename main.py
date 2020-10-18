@@ -7,9 +7,7 @@ from item import item
 #Notes about program
 #Forgot about showing stock quantity to user code became to big and complex to implement later
 #this means that stock is not shown between purchases
-#we were confused on wheter or not payment address information was stored between executions
-#of the program or just different purchases made during the same execution of the proram
-#we went with the latter
+
 
 #Further Documentation
 #The user currently has to type the item they want to remove
