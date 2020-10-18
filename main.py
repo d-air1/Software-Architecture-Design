@@ -10,6 +10,8 @@ password = input("Enter your password: ")
 
 #order number
 oNum = 0
+total = 0
+items = []
 
 #create shopping cart
 scart = cart()
@@ -188,7 +190,9 @@ while (loop_flag):
 
     elif (answer == "7"):
         #create order
-        oNum =+ 1
+        oNum += 1
+        total = scart.getTotal()
+        items = scart.getItems()
         while (True):
             #have them enter in their address if they have
             if ((customer.getAddress() == "") or (customer.getPayment() == "")):
@@ -201,8 +205,9 @@ while (loop_flag):
 
                         #make the customer confirm their purchase
                         if confirmPurchase == "yes":
-                            purchase = order(customer, oNum)
+                            purchase = order(customer,total, items, oNum)
                             purchase.orderHistory()
+                            scart.emptyCart()
                         else:
                             oNum -= 1
                         break
@@ -213,22 +218,19 @@ while (loop_flag):
                 confirmPurchase = str(input("Type yes to confirm otherwise type no: "))
 
                 if confirmPurchase == "yes":
-                    purchase = order(customer, oNum)
+                    purchase = order(customer, total, items, oNum)
+                    purchase.orderHistory()
+                    scart.emptyCart()
 
                 else:
                     oNum -= 1
-                    purchase = order(customer, oNum)
-                    purchase.orderHistory()
+                    
                 break
-        
-        
-
-                
         
 
     elif (answer == "8"):
         #do stuff
-        tmpOrder = order(None, oNum)
+        tmpOrder = order(None, total, items, oNum)
         tmpOrder.showHistory()
 
     elif (answer == "9"):

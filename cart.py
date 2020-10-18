@@ -6,7 +6,6 @@ class cart:
     def __init__(self):
         self.total = 0
         self.items = []
-        self.itemNum = 0
         self.inv = inventory()
     
     def getTotal(self):
@@ -58,8 +57,14 @@ class cart:
                 print("Total is $" + str(self.total))
                 print()
 
-    def emptyCart():
-        if not self.items:
-            return True
-        else:
-            return False
+    def emptyCart(self):
+        for i in self.items:
+            self.items.pop()
+
+        self.total = 0
+
+    def getItems(self):
+        tmp = []
+        for i in self.items:
+            tmp.append(i.get_name())
+        return tmp
