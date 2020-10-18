@@ -4,7 +4,7 @@ class inventory:
         self.stuff = ["aluminum foil", "toothpaste", "salt", "pepper", "Harry Potter Book", "SW Design Book", "Spiderman Book", "Diary of a Wimpy Kid Book", "Spiderman Figure", "Superman Figure", "Pikachu Plushy", "Charizard Card", "Phone", "Camera", "Tablet", "Laptop"]
 
         #define stock number
-        self.al_stock = 10
+        self.ab_stock = 10
         self.to_stock = 10
         self.sa_stock = 10
         self.pe_stock = 10

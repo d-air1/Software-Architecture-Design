@@ -14,37 +14,37 @@ class cart:
 
     #this should append the added item to the list
     # I was thinking about returning the index of the item added for use with the remove function but was undecided at the time
-    def additem(self, item):
+    def addItem(self, item):
         #make sure stock isn't empty
         if (self.inv.get_stock(item.get_name()) <= 0):
             return False
         else:
             #add item to items array
             self.items.append(item)
+
+            #update total
+            self.total += item.get_price(item.get_name())
+
+            #update inventory
+            self.inv.rm_stock(item.get_name())
             return True
 
-        #update total
-        self.total += item.get_price(item.get_name())
-
-        #update inventory
-        self.inv.rm_stock(item.get_name())
-
     #this should remove the iem from the lsit
-    def rmitem(self, name):
+    def rmItem(self, name):
         #rm item from items array
+        tmp = ""
         if not self.items:
             for i in self.items:
-                if name.lower() == i.lower():
+                if (name.lower() == i.get_name().lower()):
                     #save name of item
                     tmp = i
                     #remove item
                     self.items.remove(i)
+                    #update total
+                    self.total -= item.get_price(tmp)
                     break
         else:
-            print("Nothing to remove.")
-        
-        #update total
-        self.total -= item.get_price(tmp)
+            print("Item not in cart or check spelling.")
     
     def showCart(self):
         print("---Items currently in your cart---")
@@ -53,8 +53,9 @@ class cart:
         
         else:
             for i in self.items:
-                print(i + " $" + i.get_price(i.get_name()))
-                print("Total is " + self.total)
+                print(i.get_name() + " $" + str(i.get_price(i.get_name())))
+                print("Total is $" + str(self.total))
+                print()
 
     def emptyCart():
         if not self.items:

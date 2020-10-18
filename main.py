@@ -15,7 +15,7 @@ scart = cart()
 login(username, password)
 
 #create user
-customer = user(username, pasword)
+customer = user(username, password)
 
 loop_flag = True
 
@@ -82,7 +82,7 @@ while (loop_flag):
         #append to cart
         if (selection == "1"):
             #temporary item used to get price of an item
-            stuff = item("Haryy Potter Book")
+            stuff = item("Harry Potter Book")
             if (scart.addItem(stuff) == False):
                 print("Sorry we are all out of that item at the moment")
 
@@ -109,7 +109,7 @@ while (loop_flag):
         print("---Items for Sale---")
         print("1. Spiderman Figure")
         print("2. Superman Figure")
-        print("3. Pikachu Plushy)
+        print("3. Pikachu Plushy")
         print("4. Charizard Card")
         selection = str(input("Pick an item 1-4: "))
 
@@ -191,7 +191,7 @@ while (loop_flag):
                 customer.setAddress(str(input("Enter your address: ")))
             
                 #have them enter in their payment if they haven't already
-                if (customer.setPayment(str(input("Enter your credit card number")))):
+                if ( not customer.setPayment(str(input("Enter your credit card number: ")))):
                         purchase = order(customer)
                         break
             

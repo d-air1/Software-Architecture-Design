@@ -21,7 +21,7 @@ class item:
         self.ta_price = 800
         self.la_price = 1000
 
-    def get_price(self):
+    def get_price(self, name):
         if self.name == "aluminum foil":
             return self.ab_price
         elif self.name == "toothpaste":
@@ -55,5 +55,5 @@ class item:
         elif self.name == "Laptop":
             return self.la_price
 
-        def get_name():
-            return self.name
+    def get_name(self):
+        return self.name
