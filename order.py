@@ -1,6 +1,7 @@
 from user import user
 
 class order:
+    #constructure
     def __init__(self, user, total, items, onumber): 
         self.user = user
         self.total = total
@@ -24,6 +25,7 @@ class order:
         orders.close()
 
     def showHistory(self):
+        #opens list of orders and prints
         orders = open("orders.txt", "r")
         print(orders.read())
         orders.close()
