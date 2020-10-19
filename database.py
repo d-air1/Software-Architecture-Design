@@ -7,7 +7,7 @@ def login(username , password):
     #fix password
     password = password + "\n"
 
-    #temporarily hardociding the user login until sqlite database is implemented
+    #temporarily hard coding the user login until sqlite database is implemented
     if (username == users[0]) and (password == users[1]):
         print("Login Successful...")
         db_file.close()
